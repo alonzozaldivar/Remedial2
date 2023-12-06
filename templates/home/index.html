@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <h1>ola ola</h1>
+{% else %}
+  <div class="card container text-center">
+    <div class="card-body">
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button type="submit" class="btn btn-outline-success" style="border-radius: 10px;">LogIn</button>
+    </form>
+  <br><hr><br>
+    <p>
+      Si no tienes una cuenta
+          <br>
+      Registrate!
+      <br>
+  </p>
+    <a href="{% url 'home:signup' %}" class="btn btn-outline-primary" style="border-radius: 10px;">SignUp</a>
+    </div>
+  </div>
+  {% endif %}
+{% endblock content %}

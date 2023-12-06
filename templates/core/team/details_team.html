@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+    DETAIL TEAM VIEW
+{% endblock title %}
+
+{% block content %}
+<br><br>
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            {{ team.team_name }} 
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>LOCACION: </strong> {{ team.venue }} <br>
+          <strong>NOMBRE DEL EQUIPO: </strong> {{ team.team_name }} <br>
+          <strong>JUGADORES: </strong>$ {{ team.players}}
+          <br><br>
+          <strong>DIRECTOR: </strong> {{ team.director }}
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+<a href="{% url 'core:list_team' %}" class="btn btn-outline-warning" style="border-radius: 10px;">Back To List</a>
+{% endblock content %}

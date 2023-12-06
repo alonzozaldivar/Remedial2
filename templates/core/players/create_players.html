@@ -1,0 +1,12 @@
+{% block title %}
+CREATE PLAYERS VIEW
+{% endblock title %}
+
+{% block content %}
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-outline-success form-control">Create Players</button>
+        <a href="{% url 'core:list_players' %}" class="btn btn-outline-warning">Cancel</a>
+    </form>
+{% endblock content %}
